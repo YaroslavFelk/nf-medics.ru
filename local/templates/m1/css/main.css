@@ -45,7 +45,7 @@ header {position: relative;}
 .header_main > div {display: flex; height: 103px;
     justify-content: space-between; align-items: center; flex-wrap: wrap;
     }
-.header_logo {width: 30%;  max-height: 100%;}
+.header_logo {width: 455px;  max-height: 100%;}
 .header_search {width: 35%;}
 .header_phone {width: 20%;}
 .header_cart {width: 15%;}
@@ -69,7 +69,7 @@ display: inline-block; width: 50%;}
 .header_logo img {
     max-height: 100%;
     width: auto;
-    padding: 5px 0;
+    padding: 6px 0;
 }
 .header_logo span.btn_fixed_menu {display: none;}
 .header_fixed .header_logo span.btn_fixed_menu {display: flex;}
@@ -79,16 +79,164 @@ display: inline-block; width: 50%;}
 .btn_fixed_menu button:before {content:''; width: 18px; height: 17px; background: url('../img/menu.png'); margin-right: 7px; display: inline-block;}
 
 .header_phone {display: flex; align-items: center;}
-.header_phone a {display: inline-block;}
 .header_phone_text {font-weight: bold;
     font-size: 16px;
     line-height: 27px;
     text-transform: uppercase;
     color: #3B3B3B;}
-.header_phone i {margin-right: 7px;}
+.header_phone i {margin-right: 7px;     margin-bottom: 20px;}
+@media (max-width: 600px) {
+    .header_phone i {
+        margin-bottom: 0;
+    }
+
+    .footer_menu_header {
+        text-align: center;
+    }
+
+}
+@media (max-width: 420px) {
+    .header_phone i {
+        display: none;
+    }
+    .header_logo img {
+        padding: 10px 0;
+    }
+}
 .header_phone .header_callback { display: block;}
+.header__phones_block {
+    display: flex;
+    flex-direction: column;
+}
 .header_callback span {border-bottom: 1px dotted var(--main_color); color:var(--main_color); font-weight: bold; font-size: 13px;}
 .header_callback span:before {display: block; content: ''; background: url('../img/three-dots.svg');}
+
+.header__language select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.header__language {
+    position: relative;
+}
+
+
+
+.header__language select option {
+    top: 10px;
+    background: #fff;
+    color: var(--main_color);
+    border-radius: 50% !important;
+}
+
+.select {
+    position: relative;
+    display: block;
+    min-width: 220px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.select__head {
+    height: 40px;
+    border-radius: 20px;
+    width: 70px;
+    padding-left: 15px;
+    padding-top: 7px;
+
+    border: 2px solid var(--main_color);
+    text-align: center;
+    padding-right: 30px;
+    background-color: var(--main_color);
+    color: #fff;
+    font-weight: bold;
+}
+
+.select__head::after {
+    content: "▼";
+    color: #fff;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    z-index: 1;
+    text-align: center;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.select__head.open::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.select__list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-height: 205px;
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #424348;
+    scrollbar-color: dark;
+    scrollbar-width: thin;
+    list-style-type: none;
+    overscroll-behavior: contain;
+}
+
+.select__list li:before {
+    display: none;
+}
+
+.select__list li:first-of-type {
+    border-bottom: 1px solid #dedede;
+}
+
+.select__list::before {
+    content: '';
+    position: absolute; /* Абсолютное позиционирование */
+    left: 30px;
+    top: -15px;
+    z-index: 4;
+    /* Положение треугольника */
+    border: 10px solid transparent; /* Прозрачные границы */
+    border-top: 10px solid #fff; /* Добавляем треугольник */
+    transform: rotate(180deg);
+}
+
+.select__list::-webkit-scrollbar {
+    width: 7px;
+    background-color: #F8F9FA;
+    padding: 5px;
+}
+
+.select__list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #D9D9D9;
+}
+
+.select__list .select__item {
+    position: relative;
+    padding: 10px 15px;
+    cursor: pointer;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.select__list .select__item:hover {
+    background-color: rgba(224, 229, 231, 0.5);
+}
+
+
 
 .header_search {padding-right: 20px;}
 .header_search form {position: relative;}
@@ -97,7 +245,10 @@ display: inline-block; width: 50%;}
     box-sizing: border-box; border-radius: 53px; width: 100%; height: 43px; padding: 0 22px;
     outline: 0px;}
 .header_main .header_search_btn {position: absolute; border: 0px; background: transparent; right: 10px; top: 9px; outline: 0px;}
-
+.header_main .header_search_btn:hover i svg {
+    width: 22px;
+    height: 22px;
+}
 .header_cart a {display: flex; align-items: center; justify-content: flex-end;}
 .header_cart i {margin-right: 7px;}
 .header_cart_count {width: 29px; height: 29px; background: #E65555; font-size: 14px;
@@ -112,8 +263,25 @@ border-radius: 50%;
 
 .main_menu {background: var(--menu_color); height: 49px; position: relative;}
 .main_menu_row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
-.menu_item { position: relative;}
-.menu_item a {color: #fff; font-weight: bold; font-size: 14px; line-height: 17px; height: 49px; display: flex; align-items: center; padding: 0 20px;}
+.menu_item { position: relative; display: flex; margin: 0 20px; text-transform: uppercase;}
+.menu_item a {color: #fff; font-weight: bold; font-size: 14px;  height: 49px; display: flex; align-items: center; }
+
+.menu_item a:after {
+    display: block;
+    position: absolute;
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;/*задаём длинну линии до наведения курсора*/
+    bottom: 10px;
+    height: 2px; /*задаём ширину линии*/
+    background-color: #fff; /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.menu_item a:hover:after,
+.menu_item a:focus:after {
+    width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
 @media only screen and (min-width : 768px) {
     .menu_item:hover > a, .menu_item a.root-item-selected {
         text-decoration: none;
@@ -209,7 +377,6 @@ border-radius: 50%;
 main {padding: 0;}
 
 main h1 {margin-top: 40px;}
-main a {text-decoration: underline;}
 main a:hover {text-decoration: none;}
 
 .width_sidebar {margin-top: 40px;}
@@ -228,24 +395,57 @@ main a:hover {text-decoration: none;}
 .breadcrumbs__current {color: #8E8E8E;}
 
 
-footer {padding: 40px 0 60px 0; margin-top: 60px; border-top:1px solid #DEDEDE; clear: both;}
+footer {padding: 40px 0 20px 0; margin-top: 60px; border-top:1px solid #DEDEDE; clear: both;}
 footer .row {flex-wrap: wrap;}
 .footer_menu_header {padding:0 0 10px 0; font-weight: bold;
     font-size: 14px;
     line-height: 20px;
     text-transform: uppercase;
     }
-.footer_menu_header a{color:var(--font_color)}
-.footer_menu_header a:hover {color:var(--main_color);}
+.footer_menu_header a{color:var(--font_color); position: relative}
+.footer_menu_header a:after {
+    display: block;
+    position: absolute;
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;/*задаём длинну линии до наведения курсора*/
+    height: 2px; /*задаём ширину линии*/
+    background-color: var(--main_color); /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.footer_menu_header a:hover:after,
+.footer_menu_header a:focus:after {
+    width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
 .footer_menu {margin: 0; padding: 0;}
 .footer_menu_item {list-style: none; margin: 0; padding: 0 0 10px;}
 .footer_menu_item:before {display: none;}
 .footer_menu_item a {font-size: 14px;
     line-height: 20px;
-    color: var(--font_color);}
-.footer_menu_item a:hover {text-decoration: none; color:var(--main_color);}
+    color: var(--font_color);
+    position: relative;
+}
+
+.footer_menu_item a:after {
+    display: block;
+    position: absolute;
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;/*задаём длинну линии до наведения курсора*/
+    height: 1px; /*задаём ширину линии*/
+    background-color: var(--main_color); /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.footer_menu_item a:hover:after,
+.footer_menu_item a:focus:after {
+    width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
 .footer_info {padding: 40px 0 0 0; margin-bottom: 40px; }
-.footer_adres, .footer_phone, .footer_social {padding-right: 40px; display: flex; align-items: center;}
+.footer_adres, .footer_phone, .footer_social { display: flex; align-items: center;}
 .footer_adres i, .footer_phone i {margin-right: 7px;}
 
 .footer_phone_text {font-weight: bold;
@@ -290,7 +490,6 @@ footer .footer_copyright {flex-wrap: wrap-reverse;}
 
 
 
-
 /* стили только для IE10 */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .header_logo span {
@@ -306,7 +505,11 @@ footer .footer_copyright {flex-wrap: wrap-reverse;}
 }
 
 .home_about {margin: 60px auto;}
-.home_about h1 { margin-top: 0px;}
+.home_about p {
+    max-width: 100%;
+}
+.home_about h1 { margin-top: 0; text-align: center}
+.home_about h2 { margin-top: 20px; text-align: center}
 .home_about .row {flex-wrap: wrap;}
 .home_about .col-4 {padding-right: 20px;}
 .home_about .col-4 img {width: 100%;}
@@ -481,4 +684,56 @@ div.payment-options-methods-row {}
         width: 100%;
         margin: 0 0 20px;
     }
+}
+
+.footer__nav_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#gdpr-cookie-message {
+    box-shadow: none;
+}
+
+
+.row {
+    flex-wrap: wrap;
+}
+
+#gdpr-cookie-message {
+    background-color: var(--main_color);
+    display: flex;
+    flex-direction: row;
+}
+
+#gdpr-cookie-message p {
+    display: flex;
+}
+
+#gdpr-cookie-message button {
+    background:#005740 ;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 7px;
+}
+
+.g-text-center {
+    text-align: center;
+}
+
+.g-mb-50 {
+    margin-bottom: 50px;
+}
+
+.video-js {
+    width: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+
+p img {
+    width: 100%;
+    height: auto;
 }

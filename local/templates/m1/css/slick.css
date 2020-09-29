@@ -128,8 +128,53 @@
 .slick-dots {text-align: center;
     margin: 0 auto;     position: relative;
     top: -50px;}
-.slick-dots li {width: 27px; height: 27px; border: 2px solid transparent; border-radius: 50%; display: inline-block; margin: 0 5px;}
-.slick-dots li.slick-active {border: 2px solid #5B5B5B;}
-.slick-dots li:hover {background-color: #fff; border-color: transparent; color:var(--main_color);}
+.slick-dots li {width: 14px; height: 14px; border: 2px solid transparent; border-radius: 50%; display: inline-block; margin: 0 5px;}
+.slick-dots li.slick-active {background:  var(--main_color); color: #fff}
+.slick-dots li.slick-active button { color: #fff;}
+
+.slick-dots li:hover {background:  var(--main_color); color: #fff}
+.slick-dots li:hover button {color: #fff;}
 .slick-dots li:before {display: none;}
-.slick-dots li button {background: transparent; border: 0px; color: #484848; text-align: center; margin: 0; padding: 0;     line-height: 23px;}
+.slick-dots li button {visibility: hidden}
+
+/*custom project  style*/
+.slick_main_button {
+    border-color: #005740;
+    top: 50%;
+    transition: all 0.3s ;
+
+}
+
+.slick_main_button-left {
+    left: 20px;
+}
+
+.slick_main_button-right {
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.slick_main_button svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: #005740;
+}
+
+.slick_main_button:hover {
+    color: #fff;
+    background-color: #005740;
+    border: none;
+}
+.slick_main_button:hover svg {
+    fill: #fff;
+}
+
+.slick-dots li {
+    color: #005740;
+    border-color: #005740;
+}
+
+.slick-dots li button {
+    color: #005740;
+}

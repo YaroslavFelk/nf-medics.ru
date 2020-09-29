@@ -23,7 +23,10 @@ h2, .h2 {font-weight: bold; font-size: 18px;
 h3, .h3 {font-weight: bold; line-height: 22px;}
 main p, main ul {max-width: 800px;}
 i svg {fill:var(--main_color);}
-a {color:var(--main_color); cursor: pointer;}
+a {color: #222; cursor: pointer;}
+a:hover {
+    color: var(--main_color);
+}
 li {list-style: none; position: relative; margin-bottom: 5px;}
 li:before {content: ''; width: 4px; height: 4px; border-radius: 50%; position: absolute; left: -15px; top: 9px;
     background: var(--main_color);}
@@ -40,7 +43,9 @@ table.table, .table td, .table th {    border: 1px solid #b2b2b2; padding: 10px;
     border-radius: 3px; display: inline-block; text-align: center; text-decoration: none !important;}
 .btn:hover {
     box-shadow: 0px 0px 10px rgba(45, 129, 190, 0.56);}
-
+ a.btn:hover {
+    background-color: #fff;
+}
 .btn_style {
     height:44px; line-height: 44px; color: #fff;
     font-size: 14px;
@@ -49,8 +54,8 @@ table.table, .table td, .table th {    border: 1px solid #b2b2b2; padding: 10px;
     position: relative;
     z-index: 5;
     padding: 0px 20px;
-    border: none;
-    background: none;
+    border: #005740;
+    background: #005740;
     outline: none;
     vertical-align: top;
     font-weight: 600;
@@ -59,42 +64,11 @@ table.table, .table td, .table th {    border: 1px solid #b2b2b2; padding: 10px;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
-.btn_style:before {
-    transition: background 1s, top .2s, bottom .2s;
-    z-index: -1;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-image: linear-gradient(to right, var(--main_color) 0%, #f1a617 50%, #f1a617 60%, var(--main_color) 100%);
-    background-size: 200% auto;
-    border-radius: 3px;
-}
-.btn_style:after {
-    opacity: .65;
-    z-index: -2;
-    right: 0;
-    height: 100%;
-    left: 0;
-    top: 3px;
-    transition: all 1s;
-    -webkit-filter: blur(5px);
-    -ms-filter: blur(3px);
-    filter: blur(5px);
-    border-radius: 3px;
-    background-size: 200% auto;
-    background-image: linear-gradient(to right, var(--main_color) 0%, #f1a617 50%, #f1a617 60%, var(--main_color) 100%);
-}
-.btn_style:before, .btn_style:after {
-content: '';
-position: absolute;
-}
-.btn_style:hover:before {
-    background-position: right center;
-}
-.btn_style:hover:after {
-    opacity: .85;
-    background-position: right center;
+
+.btn_style:hover {
+    color: #005740;
+    background: none;
+    border: 1px solid #005740;
 }
 
 

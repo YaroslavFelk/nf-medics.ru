@@ -31,6 +31,10 @@ if (0 < $arResult["SECTIONS_COUNT"])
 					<? /*style="background-image: url('<? echo $arSection['PICTURE']['SRC']; ?>');"*/?>
 					title="<? echo $arSection['PICTURE']['TITLE']; ?>"
 				>
+                <?if ($arSection['PICTURE']):?>
+                    <img class="tag__img" src="<?=$arSection['PICTURE']['SRC']?>">
+                <?endif;?>
+
 				<? echo $arSection['NAME']; ?></a><?
 			}
 

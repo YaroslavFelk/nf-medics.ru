@@ -1,0 +1,75 @@
+.header_info{
+    display: none;
+}
+
+.header_cart{
+    display: none;
+}
+
+.footer_social{
+    display: none;
+}
+
+.footer_payment_block{
+    display: none;
+}
+
+.footer_info{
+    justify-content: space-between;
+}
+.g-underline__hover {
+    position: relative;
+    text-decoration: none; /*убираем подчёркивание*/
+}
+
+.g-underline__hover:after {
+    display: block;
+    position: absolute;
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;/*задаём длинну линии до наведения курсора*/
+    height: 2px; /*задаём ширину линии*/
+    background-color: var(--main_color); /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.g-underline__hover:hover:after,
+.g-underline__hover:focus:after {
+    width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.subscribe_form {
+    margin-left: auto;
+}
+
+.sub_section a {
+    color: var(--main_color);
+}
+
+.catalog__section_block {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+}
+
+.tag__img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.descriptor {
+    height: 100%;
+    align-self: center;
+    color: var(--main_color);
+    padding-left: 5px;
+    margin-left: 10px;
+    border-left: 2px solid var(--main_color);
+    min-width: 185px;
+}
+
+
+@media (max-width: 768px) {
+    .descriptor {
+        display: none;
+    }
+}

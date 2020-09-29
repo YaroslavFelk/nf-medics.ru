@@ -1,8 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 <footer>
     <div class="container">
-        <div class="row">
-            <div class="col-3">
+        <div class="row footer__nav_block">
+            <div class="">
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "bottom",
@@ -20,7 +20,7 @@
                     )
                 );?>
             </div>
-            <div class="col-3">
+            <div class="">
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "bottom",
@@ -38,7 +38,7 @@
                     )
                 );?>
             </div>
-            <div class="col-3">
+            <div class="">
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "bottom",
@@ -56,7 +56,7 @@
                     )
                 );?>
             </div>
-            <div class="col-3">
+            <div class="">
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "bottom",
@@ -74,16 +74,37 @@
                     )
                 );?>
             </div>
+            <div class="">
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "bottom",
+                    Array(
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "left",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "1",
+                        "MENU_CACHE_GET_VARS" => array(""),
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "ROOT_MENU_TYPE" => "bottom_contacts",
+                        "USE_EXT" => "N"
+                    )
+                );?>
+            </div>
         </div>
         <div class="row footer_info">
-            <div class="col-4 footer_adres">
+            <div class="col-5 footer_adres">
                 <i>
                     <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8 0.399902C3.589 0.399902 0 3.9889 0 8.3999C0 12.5494 5.2335 20.3999 8 20.3999C10.766 20.3999 16 12.5494 16 8.3999C16 3.9889 12.411 0.399902 8 0.399902ZM8 18.3989C6.617 18.1999 2 11.9149 2 8.3999C2 5.0914 4.6915 2.3999 8 2.3999C11.3085 2.3999 14 5.0914 14 8.3999C14 11.9149 9.383 18.1999 8 18.3989Z"/>
                         <path d="M8 10.3999C9.10457 10.3999 10 9.50447 10 8.3999C10 7.29533 9.10457 6.3999 8 6.3999C6.89543 6.3999 6 7.29533 6 8.3999C6 9.50447 6.89543 10.3999 8 10.3999Z" />
                     </svg>
                 </i>
-                <div><? $APPLICATION->IncludeFile(SITE_DIR."include/adres.php",Array(),Array("MODE"=>"text"));?></div>
+                <div><b>
+                        <? $APPLICATION->IncludeFile(SITE_DIR."include/adres.php",Array(),Array("MODE"=>"text"));?></b>
+                    <span class="footer_time"><? $APPLICATION->IncludeFile(SITE_DIR."include/phonetime.php",Array(),Array("MODE"=>"text"));?></span>
+                </div>
             </div>
             <div class="col-4 footer_phone">
                 <i><svg width="20" height="29" viewBox="0 0 20 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,30 +115,11 @@
                 <div>
                     <a class="footer_phone_text">
                         <? $APPLICATION->IncludeFile(SITE_DIR."include/phone.php",Array(),Array("MODE"=>"text"));?></a>
-                    <span class="footer_time"><? $APPLICATION->IncludeFile(SITE_DIR."include/phonetime.php",Array(),Array("MODE"=>"text"));?></span>
+
                 </div>
                 <a class="footer_btn_callback" data-toggle="pkModal" data-target="#callbackModal"  data-ajax="/ajax/form.php"><?=GetMessage('PK_CALLBACK');?></a>
             </div>
-            <div class="col-4 footer_social">
-                <b><?=GetMessage('PK_SOCIAL');?></b>
-                <div>
-                    <?$APPLICATION->IncludeComponent(
-	"profitkit:social", 
-	".default", 
-	array(
-		"VK" => "https://vk.com",
-		"FB" => "https://facebook.com",
-		"INST" => "https://instagram.com",
-		"TW" => "https://twitter.com",
-		"GOOGLE" => "https://google.com",
-		"YOUTUBE" => "https://youtube.com",
-		"ODNOKLASSNIKI" => "https://ok.ru",
-		"COMPONENT_TEMPLATE" => ".default"
-	),
-	false
-);?>
-                </div>
-            </div>
+
         </div>
         <div class="row footer_copyright">
             <div class="col-8">

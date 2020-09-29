@@ -1,4 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
+<?php use Bitrix\Main\Page\Asset;
+ ?>
 <div class="header_info">
     <div class="container">
         <div class="header_city">
@@ -30,7 +32,8 @@
         <div class="mobile_menu"><svg width="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="var(--font_color)" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></div>
         <div class="header_logo">
             <a href="/"><? $APPLICATION->IncludeFile(SITE_DIR."include/logo.php",Array(),Array("MODE"=>"text"));?></a>
-            <span class="header_slogan"><? $APPLICATION->IncludeFile(SITE_DIR."include/slogan.php",Array(),Array("MODE"=>"text"));?></span>
+            <div class="descriptor">Завод по производству средст индивидуальной защиты</div>
+           <!-- <span class="header_slogan"><?/* $APPLICATION->IncludeFile(SITE_DIR."include/slogan.php",Array(),Array("MODE"=>"text"));*/?></span>-->
             <span class="btn_fixed_menu"><button>Меню</button></span>
         </div>
         <div class="header_phone">
@@ -46,6 +49,17 @@
                 <a class="header_callback" data-target="#callbackModal" data-ajax="/ajax/form.php"><span><?=GetMessage('PK_CALLBACK');?></span></a>
             </div>
         </div>
+
+<!--        <div class="header__language">-->
+<!--            <input class="select__input" type="hidden" name="">-->
+<!--            <div class="select__head">RU</div>-->
+<!--            <ul class="select__list" style="display: none;">-->
+<!--                <li class="select__item">RU</li>-->
+<!--                <li class="select__item">EN</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+
+
         <div class="header_search">
             <? if (false) { ?>
             <?$APPLICATION->IncludeComponent(
@@ -93,3 +107,5 @@
         </div>
     </div>
 </div>
+<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/select.js");?>
+
